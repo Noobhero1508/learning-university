@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learning Links</title>
+  <link href="https://fonts.googleapis.com/css2?family=Prata&display=swap" rel="stylesheet">
+  <style>
+    /* General body styling */
+    body {
+      font-family: 'Prata', serif;
+      font-size: 18px;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-image: url('https://i.pinimg.com/originals/d4/42/9e/d4429e833937f4733fa37d8e86b3675f.png');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      position: relative;
+    }
+
+    /* Main container for the initial layout */
+    .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 90%;
+      max-width: 1400px;
+    }
+
+    /* Styling for side link columns */
+    .side-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    
+    /* Center column for the main category buttons */
+    .main-links {
+      flex: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Container for course links, hidden by default */
+    .content-links {
+        display: none; /* Hidden by default */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* General link button style */
+    .link {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      margin: 15px;
+      padding: 0 15px;
+      text-decoration: none;
+      color: #000000;
+      font-size: 20px;
+      border-radius: 15px;
+      background-color: rgba(144, 238, 144, 0.7);
+      border: 2px solid #FFFFFF;
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .link:hover {
+      background-color: rgba(144, 238, 144, 0.9);
+      transform: scale(1.05);
+    }
+    
+    /* Styling for side links */
+    .side-link {
+        width: 180px;
+        height: 60px;
+    }
+
+    /* Styling for the main "VIệt Nguyễn AI" button */
+    .category-link {
+        width: 360px;
+        height: 72px;
+        font-size: 22px;
+    }
+    
+    /* Grid layout for the 8 course links */
+    .course-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+        gap: 20px;
+        width: 100%;
+        max-width: 900px;
+    }
+
+    /* Styling for individual course link buttons */
+    .course-link {
+        width: 100%; /* Full width of the grid cell */
+        min-height: 90px;
+        font-size: 18px;
+    }
+
+    /* Back button styling */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 120px;
+      height: 60px;
+      font-size: 18px;
+      display: none; /* Hidden by default */
+    }
+
+    /* Responsive design for smaller screens */
+    @media (max-width: 1024px) {
+        body {
+            height: auto;
+            padding: 80px 0 20px 0; /* Add padding for content and back button */
+        }
+        .container {
+            flex-direction: column;
+            gap: 20px;
+        }
+        .side-links {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .course-grid {
+            grid-template-columns: 1fr; /* Switch to a single column */
+            max-width: 500px;
+        }
+        .category-link {
+            width: 300px;
+        }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button (initially hidden) -->
+  <a href="#" class="link back-button" id="backButton" onclick="goBack()">Quay Lại</a>
+
+  <!-- Main Container -->
+  <div class="container" id="mainContainer">
+    <div class="side-links left">
+      <a href="https://www.google.com/" class="link side-link" target="_blank">Google</a>
+      <a href="https://chatgpt.com/" class="link side-link" target="_blank">ChatGPT</a>
+      <a href="https://translate.google.com/" class="link side-link" target="_blank">Dịch thuật</a>
+      <a href="https://drive.google.com/drive/u/0/folders/0ADF768zYnbXuUk9PVA" class="link side-link" target="_blank">Google Drive</a>
+      <a href="https://www.notion.so/" class="link side-link" target="_blank">Notion</a>
+    </div>
+
+    <div class="main-links">
+      <a href="#" class="link category-link" onclick="showLinks('vietnguyenai')">VIệt Nguyễn AI</a>
+    </div>
+
+    <div class="side-links right">
+      <a href="https://mapstudy.edu.vn/" class="link side-link" target="_blank">Mapstudy</a>
+      <a href="https://moon.vn/" class="link side-link" target="_blank">Moon</a>
+      <a href="https://notebooklm.google.com/" class="link side-link" target="_blank">NotebookLM</a>
+    </div>
+  </div>
+
+  <!-- VIệt Nguyễn AI Links (initially hidden) -->
+  <div id="vietnguyenai" class="content-links">
+    <div class="course-grid">
+      <a href="https://drive.google.com/drive/folders/1i7JqQufzwBOri5jgOv61pblbvmL4UNAu" class="link course-link" target="_blank">Data Science Machine Learning Nâng Cao 2023</a>
+      <a href="https://drive.google.com/drive/folders/1cS-mBuBImo8T5KVC05HA4Y3T_AgmJrwq" class="link course-link" target="_blank">Data Science Machine Learning Cơ Bản</a>
+      <a href="https://drive.google.com/drive/folders/1HfnaLhvHBTuhzr5ngZg05fGr1SWxB2yd" class="link course-link" target="_blank">Deep Learning For Computer Vision Nâng Cao 2023</a>
+      <a href="https://drive.google.com/drive/folders/1d-ge3w-nUXxzXY5_fgYIKCqX62v_YD8H" class="link course-link" target="_blank">Deep Learning For Computer Vision Nâng Cao 2024</a>
+      <a href="https://drive.google.com/drive/folders/1OuQYUFfLDaNwo4WtJPn0Ha7okkVw2dUU" class="link course-link" target="_blank">Python & Ai Cơ Bản Cùng Việt Nguyễn Ai 2024</a>
+      <a href="https://drive.google.com/drive/folders/1p0hpUTuHNbb-GbWf0RxAaKTNhIFdyekY" class="link course-link" target="_blank">Deep Learning For Computer Vision Cơ Bản</a>
+      <a href="https://drive.google.com/drive/folders/1vVSowp_3LUD6mbKEiXOm6ND9FTYU7MSt" class="link course-link" target="_blank">Toán Ai/ds/ml/dl</a>
+      <a href="https://drive.google.com/drive/folders/1K8iJa-H-9wiiYA0bo2YtoNHkyAzXQmoF" class="link course-link" target="_blank">Data Science Machine Learning Nâng Cao 2024</a>
+    </div>
+  </div>
+
+  <script>
+    function showLinks(subject) {
+      document.getElementById('mainContainer').style.display = 'none';
+      document.getElementById(subject).style.display = 'flex';
+      document.getElementById('backButton').style.display = 'flex';
+    }
+
+    function goBack() {
+      document.getElementById('mainContainer').style.display = 'flex';
+      document.querySelectorAll('.content-links').forEach(div => div.style.display = 'none');
+      document.getElementById('backButton').style.display = 'none';
+    }
+  </script>
+</body>
+</html>
