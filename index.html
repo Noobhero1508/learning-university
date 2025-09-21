@@ -16,7 +16,7 @@
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      background-image: url('view-starry-night-sky-with-nature-mountains-landscape.jpg');
+      background-image: url('https://i.imgur.com/8aZ2Z1N.jpeg'); /* Updated with a placeholder URL */
       background-size: cover;
       background-position: center;
       background-attachment: fixed;
@@ -61,7 +61,7 @@
         box-sizing: border-box;
     }
 
-    /* General link button style */
+    /* General link button style - UPDATED */
     .link {
       display: flex;
       justify-content: center;
@@ -70,18 +70,20 @@
       margin: 15px;
       padding: 0 15px;
       text-decoration: none;
-      color: #000000;
+      color: #FFFFFF; /* Changed text color to white for better contrast */
       font-size: 20px;
       border-radius: 15px;
-      background-color: rgba(144, 238, 144, 0.7);
-      border: 2px solid #FFFFFF;
+      background-color: rgba(25, 25, 112, 0.6); /* Changed to a semi-transparent midnight blue */
+      border: 1px solid rgba(173, 216, 230, 0.5); /* Subtle light blue border */
       transition: all 0.3s ease;
       box-sizing: border-box;
+      box-shadow: 0 0 10px rgba(173, 216, 230, 0.5); /* Added a glow effect */
     }
 
     .link:hover {
-      background-color: rgba(144, 238, 144, 0.9);
+      background-color: rgba(25, 25, 112, 0.8); /* Darken on hover */
       transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(173, 216, 230, 0.8); /* Intensify glow on hover */
     }
     
     /* Styling for side links */
@@ -138,6 +140,7 @@
             flex-direction: row;
             flex-wrap: wrap;
             gap: 10px;
+            justify-content: center;
         }
         .course-grid {
             grid-template-columns: 1fr; /* Switch to a single column */
